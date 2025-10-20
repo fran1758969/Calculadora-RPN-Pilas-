@@ -79,7 +79,6 @@ int main()
             continue; // volver a pedir entrada sin procesar token truncado
         }
 
-        // OK: quitar el '\n' final y procesar normalmente
         token[strcspn(token, "\n")] = '\0';
 
         if (token[0] == '\0') break; // El programa termina si la entrada es un ENTER
