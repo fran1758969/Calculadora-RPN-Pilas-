@@ -15,6 +15,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <windows.h>
+#include "Inicio de sesion y Registro/menu_acceso.h"
+#include "Validacion y otros/variados.h"
+
 
 typedef struct pila 
 {    
@@ -22,8 +25,6 @@ typedef struct pila
     struct pila* sig; // Puntero hacia el siguiente nodo
     
 } Pila;
-
-#define MAX_CARACTERES 12
 
 // PILAS (STACK)
 void insertar_nodo(Pila** cima, int valor); // Crea e inserta un nodo en la cima
@@ -37,6 +38,13 @@ int resolver(Pila** cima, int *error,char* op);
 
 int main()
 {
+    do
+    {
+        menu_de_acceso();
+    } while (terminar_o_continuar());
+    
+
+
     system("cls");
     Pila *cima = NULL; // Cima de la pila
     int error; // Determinara el flujo del programa segun si se realiza o no una divison entre 0
